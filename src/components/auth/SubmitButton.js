@@ -17,3 +17,6 @@ const SubmitButton = (props) => {
 };
 
 export default SubmitButton;
+
+// do you want delete submitButton function?
+// Do by that way!

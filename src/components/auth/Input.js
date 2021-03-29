@@ -18,3 +18,6 @@ const Input = (props) => {
 };
 
 export default Input;
+
+// do you want delete Input function?
+// Do by that way!

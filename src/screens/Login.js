@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 import routes from "../routes";
-import { drakModeVar } from "./apollo";
 
 import AuthLayout from "../components/auth/AuthLayout";
 import SubmitButton from "../components/auth/SubmitButton";

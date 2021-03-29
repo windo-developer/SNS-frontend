@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
 import { BasicWhiteBox } from "../shared/shared";
 
 const StyledBottomBox = styled(BasicWhiteBox)`
@@ -19,6 +21,12 @@ const BottomBox = ({ cta, link, linkText }) => {
       <Link to={link}>{linkText}</Link>
     </StyledBottomBox>
   );
+};
+
+BottomBox.propTypes = {
+  cat: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
 };
 
 export default BottomBox;

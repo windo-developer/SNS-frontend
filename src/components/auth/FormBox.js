@@ -14,7 +14,7 @@ const Container = styled(BasicWhiteBox)`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 35px;
+    margin-top: 25px;
   }
 `;
 

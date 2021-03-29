@@ -20,7 +20,7 @@ const StyledSeparator = styled.div`
   }
 `;
 
-const Separator = () => {
+const Separator = ({ margin }) => {
   return (
     <StyledSeparator>
       <div></div>
