@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { BasicWhiteBox } from "../shared/shared";
+import { BasicWhiteBox } from "../shared/SharedStyles";
 
 const StyledBottomBox = styled(BasicWhiteBox)`
   padding: 20px 0px;

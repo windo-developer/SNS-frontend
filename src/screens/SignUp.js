@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { Helmet } from "react-helmet-async";
 
 import routes from "../routes";
-
 import AuthLayout from "../components/auth/AuthLayout";
 import SubmitButton from "../components/auth/SubmitButton";
 import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import BottomBox from "../components/auth/BottomBox";
-import { BoldLinkText } from "../components/shared/shared";
+import { BoldLinkText } from "../components/shared/SharedStyles";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.fontColor};
@@ -77,6 +77,9 @@ const SpanText = styled.span`
 const SignUp = () => {
   return (
     <AuthLayout>
+      <Helmet>
+        <title>SignUpㆍInstagram</title>
+      </Helmet>
       <FormBox>
         <HeaderContainer>
           <Title>Instagram</Title>
@@ -104,11 +107,7 @@ const SignUp = () => {
           By signing up, you agree to our Terms , Data Policy and Cookies Policy
         </SpanText>
       </FormBox>
-      <BottomBox
-        cta={"Have an account?"}
-        linkText="Login up"
-        link={routes.home}
-      />
+      <BottomBox cta="Have an account?" linkText="Login" link={routes.home} />
     </AuthLayout>
   );
 };

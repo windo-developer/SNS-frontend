@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BasicWhiteBox } from "../shared/shared";
+import { BasicWhiteBox } from "../shared/SharedStyles";
 
 const Container = styled(BasicWhiteBox)`
   display: flex;
