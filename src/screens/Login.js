@@ -13,6 +13,7 @@ import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import BottomBox from "../components/auth/BottomBox";
 import FormError from "../components/auth/FormError";
+import { userLogIn } from "../apollo";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.fontColor};
@@ -54,6 +55,7 @@ const Login = () => {
     formState,
     getValues,
     setError,
+    clearErrors,
   } = useForm({
     mode: "onChange",
   });
@@ -62,15 +64,17 @@ const Login = () => {
       login: { ok, token, error },
     } = data;
     if (!ok) {
-      setError("result", {
+      return setError("result", {
         message: error,
       });
+    }
+    if (token) {
+      userLogIn(token);
     }
   };
   const [login, { loading }] = useMutation(LOGIN_MUTATION, {
     onCompleted,
   });
-
   const onSubmitValid = (data) => {
     if (loading) {
       return;
@@ -80,6 +84,10 @@ const Login = () => {
       variables: { username, password },
     });
   };
+  const clearLoginError = () => {
+    clearErrors("result");
+  };
+
   return (
     <AuthLayout>
       <Helmet>
@@ -100,6 +108,7 @@ const Login = () => {
             type="text"
             placeholder="Username"
             hasError={Boolean(errors?.username?.message)}
+            onChange={clearLoginError}
           />
           <FormError message={errors?.username?.message} />
           <Input
@@ -114,6 +123,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             hasError={Boolean(errors?.password?.message)}
+            onChange={clearLoginError}
           />
           <FormError message={errors?.password?.message} />
           <SubmitButton
