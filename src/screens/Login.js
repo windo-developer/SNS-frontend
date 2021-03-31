@@ -6,6 +6,8 @@ import { Helmet } from "react-helmet-async";
 import { gql, useMutation } from "@apollo/client";
 
 import routes from "../routes";
+import { userLogIn } from "../apollo";
+
 import AuthLayout from "../components/auth/AuthLayout";
 import SubmitButton from "../components/auth/SubmitButton";
 import Separator from "../components/auth/Separator";
@@ -13,7 +15,8 @@ import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import BottomBox from "../components/auth/BottomBox";
 import FormError from "../components/auth/FormError";
-import { userLogIn } from "../apollo";
+import PageLinkSpan from "../components/shared/PageLinkSpan";
+import { useHistory, useLocation } from "react-router-dom";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.fontColor};
@@ -37,6 +40,10 @@ const ResetPasswordButton = styled.button`
   font-weight: 600;
 `;
 
+const Notification = styled.div`
+  color: #2ecc71;
+`;
+
 const LOGIN_MUTATION = gql`
   mutation login($username: String!, $password: String!) {
     login(username: $username, password: $password) {
@@ -48,6 +55,8 @@ const LOGIN_MUTATION = gql`
 `;
 
 const Login = () => {
+  const location = useLocation();
+  // const history = useHistory();
   const {
     register,
     errors,
@@ -95,6 +104,7 @@ const Login = () => {
       </Helmet>
       <FormBox>
         <Title>Instagram</Title>
+        <Notification>{location?.state?.message}</Notification>
         <form onSubmit={handleSubmit(onSubmitValid)}>
           <Input
             ref={register({
@@ -147,6 +157,7 @@ const Login = () => {
         linkText="Sign up"
         link={routes.signUp}
       />
+      <PageLinkSpan />
     </AuthLayout>
   );
 };

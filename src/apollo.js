@@ -9,6 +9,7 @@ export const userLogIn = (token) => {
 };
 export const userLogOut = (token) => {
   localStorage.removeItem(TOKEN);
+  window.location.reload();
   isLoggedInVar(false);
 };
 
