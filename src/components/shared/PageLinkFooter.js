@@ -4,7 +4,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 
 const StyledPageLinkSpan = styled.a`

@@ -16,7 +16,7 @@ import FormError from "../components/auth/FormError";
 import BottomBox from "../components/auth/BottomBox";
 import { BoldLinkText } from "../components/shared/SharedStyles";
 import TermsLinkText from "../components/auth/TermsLinkText";
-import PageLinkSpan from "../components/shared/PageLinkSpan";
+import PageLinkSpan from "../components/shared/PageLinkFooter";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.fontColor};
@@ -240,7 +240,6 @@ const SignUp = () => {
         </SpanText>
       </FormBox>
       <BottomBox cta="Have an account?" linkText="Login" link={routes.home} />
-      <PageLinkSpan />
     </AuthLayout>
   );
 };

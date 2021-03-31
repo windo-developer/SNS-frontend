@@ -15,7 +15,7 @@ import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import BottomBox from "../components/auth/BottomBox";
 import FormError from "../components/auth/FormError";
-import PageLinkSpan from "../components/shared/PageLinkSpan";
+import PageLinkSpan from "../components/shared/PageLinkFooter";
 import { useHistory, useLocation } from "react-router-dom";
 
 const Title = styled.h1`
@@ -157,7 +157,6 @@ const Login = () => {
         linkText="Sign up"
         link={routes.signUp}
       />
-      <PageLinkSpan />
     </AuthLayout>
   );
 };
