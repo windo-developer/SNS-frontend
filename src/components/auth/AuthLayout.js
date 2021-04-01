@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useReactiveVar } from "@apollo/client";
-import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 import { darkModeVar, disableDarkMode, enableDarkMode } from "../../apollo";
-import PageLinkSpan from "../shared/PageLinkFooter";
+import PageLinkFooter from "../shared/PageLinkFooter";
 
 const Container = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const AuthLayout = ({ children }) => {
         {/* <DarkModeButton onClick={darkMode ? disableDarkMode : enableDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
         </DarkModeButton> */}
-        <PageLinkSpan />
+        <PageLinkFooter />
       </Footer>
     </Container>
   );

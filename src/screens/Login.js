@@ -4,6 +4,7 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { gql, useMutation } from "@apollo/client";
+import { useHistory, useLocation } from "react-router-dom";
 
 import routes from "../routes";
 import { userLogIn } from "../apollo";
@@ -15,8 +16,6 @@ import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import BottomBox from "../components/auth/BottomBox";
 import FormError from "../components/auth/FormError";
-import PageLinkSpan from "../components/shared/PageLinkFooter";
-import { useHistory, useLocation } from "react-router-dom";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.fontColor};
