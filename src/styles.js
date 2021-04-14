@@ -13,6 +13,16 @@ export const darkTheme = {
   bgColor: "#2c2c2c",
 };
 
+export const colors = {
+  red: "#fb3958",
+  yellow: "#ffc838",
+  green: "#6dc993",
+  blue: "#458eff",
+  darkBlue: "#125688",
+  lightBrown: "#ded1c1",
+  darkBrown: "#9b6954",
+};
+
 export const GlobalStyles = createGlobalStyle`
 ${reset}
 body {

@@ -10,3 +10,7 @@ export const BoldLinkText = styled.span`
   font-weight: 600;
   color: rgb(142, 142, 142);
 `;
+
+export const BoldText = styled.span`
+  font-weight: 600;
+`;

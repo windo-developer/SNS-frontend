@@ -9,6 +9,7 @@ const Content = styled.main`
   width: 100%;
 `;
 
+// rendering header + content
 const Layout = ({ children }) => {
   return (
     <>

@@ -11,6 +11,7 @@ const IDENTIFY_USER = gql`
   }
 `;
 
+// Make sure fake token (user)
 const useUser = () => {
   const hasToken = useReactiveVar(isLoggedInVar);
   const { data, error } = useQuery(IDENTIFY_USER, {
@@ -22,7 +23,7 @@ const useUser = () => {
       userLogOut();
     }
   }, [data]);
-  return;
+  return { data };
 };
 
 export default useUser;

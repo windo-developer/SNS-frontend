@@ -7,7 +7,6 @@ import { client, darkModeVar, isLoggedInVar } from "./apollo";
 import { darkTheme, lightTheme, GlobalStyles } from "./styles";
 import routes from "./routes";
 
-import Header from "./components/shared/Header";
 import Layout from "./components/shared/Layout";
 
 import Home from "./screens/Home";
