@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Helmet } from "react-helmet-async";
@@ -134,6 +134,7 @@ const ProfileButton = styled(SubmitButton).attrs({
 })`
   margin-top: 0px;
   margin-left: 10px;
+  cursor: pointer;
 `;
 
 const Profile = () => {
@@ -143,15 +144,28 @@ const Profile = () => {
       username,
     },
   });
+  const [unfollowUser] = useMutation(UNFOLLOW_USER_MUTATION, {
+    variables: {
+      username,
+    },
+    refetchQueries: [{ query: SEE_PROFILE_QUERY, variables: { username } }],
+  });
+  const [followUser] = useMutation(FOLLOW_USER_MUTATION, {
+    variables: {
+      username,
+    },
+    refetchQueries: [{ query: SEE_PROFILE_QUERY, variables: { username } }],
+  });
+
   const getButton = (seeProfile) => {
     const { isMe, isFollowing } = seeProfile;
     if (isMe) {
       return <ProfileButton>Edit Profile</ProfileButton>;
     }
     if (isFollowing) {
-      return <ProfileButton>UnFollow</ProfileButton>;
+      return <ProfileButton onClick={unfollowUser}>UnFollow</ProfileButton>;
     } else {
-      return <ProfileButton>Follow</ProfileButton>;
+      return <ProfileButton onClick={followUser}>Follow</ProfileButton>;
     }
   };
 
