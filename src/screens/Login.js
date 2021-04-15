@@ -10,7 +10,7 @@ import routes from "../routes";
 import { userLogIn } from "../apollo";
 
 import AuthLayout from "../components/auth/AuthLayout";
-import SubmitButton from "../components/auth/SubmitButton";
+import SubmitButton from "../components/shared/SubmitButton";
 import Separator from "../components/auth/Separator";
 import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";

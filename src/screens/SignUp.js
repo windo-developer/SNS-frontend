@@ -9,7 +9,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import routes from "../routes";
 
 import AuthLayout from "../components/auth/AuthLayout";
-import SubmitButton from "../components/auth/SubmitButton";
+import SubmitButton from "../components/shared/SubmitButton";
 import Input from "../components/auth/Input";
 import FormBox from "../components/auth/FormBox";
 import FormError from "../components/auth/FormError";
