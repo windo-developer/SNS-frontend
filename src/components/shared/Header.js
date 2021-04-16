@@ -55,13 +55,17 @@ const Header = () => {
     <StyledHeader>
       <Wrapper>
         <Column>
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
+          <Link to="/">
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </Link>
         </Column>
         <Column>
           {isLoggedIn ? (
             <IconContainer>
               <Icon>
-                <FontAwesomeIcon icon={faHome} size="lg" />
+                <Link to="/">
+                  <FontAwesomeIcon icon={faHome} size="lg" />
+                </Link>
               </Icon>
               <Icon>
                 <FontAwesomeIcon icon={faCompass} size="lg" />
